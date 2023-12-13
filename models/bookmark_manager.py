@@ -39,3 +39,8 @@ class BookmarkManager:
         if bookmark_info not in self.bookmarks:
             self.bookmarks.append(bookmark_info)
             self.save_bookmarks_to_directory("default", self.bookmarks)
+
+    def save_bookmarks_to_directory(self, directory, bookmarks):
+        filepath = os.path.join(BOOKMARKS_DIR, directory + '.json')
+        with open(filepath, 'w') as f:
+            json.dump(bookmarks, f, indent=4)
