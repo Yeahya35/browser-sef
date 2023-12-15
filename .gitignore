@@ -2,3 +2,5 @@ env/
 .idea
 *.json
 *.ico
+__pycache__/
+.DS_Store
